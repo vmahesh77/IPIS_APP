@@ -1904,14 +1904,30 @@ namespace ArecaIPIS.Forms.HomeForms
                         //MessageBox.Show("Entered text: " + enteredText);
                         if (enteredText.Length == 5)
                         {
-                            bool trainexists = OnlineTrainsDao.DeleteTrainByNumber(enteredText.Trim());
-                            if (!trainexists)
+                            bool existed = false;
+                            DataTable onlineTrainsDt = OnlineTrainsDao.GetTopScheduledTaddbRecords();
+                            if(onlineTrainsDt!=null && onlineTrainsDt.Rows.Count>0)
                             {
-                                enteredText = "";
-                                MessageBox.Show("Please Enter Valid Train Number", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                                 existed = onlineTrainsDt.AsEnumerable().Any(row => row.Field<string>("TrainNo") == enteredText);
                             }
-                            LoadFillrunningTrains();
+
+                            if (!existed)
+                            {
+                                //string trainum=Row
+                                bool trainexists = OnlineTrainsDao.DeleteTrainByNumber(enteredText.Trim());
+                                if (!trainexists)
+                                {
+                                    enteredText = "";
+                                    MessageBox.Show("Please Enter Valid Train Number", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                                }
+                                LoadFillrunningTrains();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Train Number Already Existed");
+                                LoadFillrunningTrains();
+                            }
                         }
                         else
                         {

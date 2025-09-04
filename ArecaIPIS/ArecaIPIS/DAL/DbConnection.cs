@@ -431,8 +431,11 @@ namespace ArecaIPIS.DAL
                             }
 
                             // Execute the command
-                            command.ExecuteNonQuery();
-                            return true; // Success
+                       int result= command.ExecuteNonQuery();
+                            if (result > 0)
+                                return true; // Success
+                            else
+                                return false;
                         }
                     }
                 }
