@@ -658,6 +658,22 @@ namespace ArecaIPIS.Forms
 
         private void txtStationCode_TextChanged(object sender, EventArgs e)
         {
+            string text = txtStationCode.Text;
+
+            // Regex: allow only letters (any language) and spaces
+            if (System.Text.RegularExpressions.Regex.IsMatch(text, @"[^ \p{L}]"))
+            {
+                txtStationCode.Text = System.Text.RegularExpressions.Regex.Replace(text, @"[^ \p{L}]", "");
+                txtStationCode.SelectionStart = txtHindiName.Text.Length; // keep cursor at end
+                txtStationCode.BackColor = Color.Red;
+                txtStationCode.BorderStyle = BorderStyle.FixedSingle;
+            }
+            else
+            {
+                txtStationCode.BackColor = Color.White;
+                txtStationCode.BorderStyle = BorderStyle.Fixed3D;
+            }
+
             ChangeTextboxLetterSmallToCapital(txtStationCode);
             string stationCode = txtStationCode.Text.Trim();
             int textLength = stationCode.Length;
@@ -679,6 +695,21 @@ namespace ArecaIPIS.Forms
 
         private void txtEnglishName_TextChanged(object sender, EventArgs e)
         {
+            string text = txtEnglishName.Text;
+
+            // Regex: allow only letters (any language) and spaces
+            if (System.Text.RegularExpressions.Regex.IsMatch(text, @"[^ \p{L}]"))
+            {
+                txtEnglishName.Text = System.Text.RegularExpressions.Regex.Replace(text, @"[^ \p{L}]", "");
+                txtEnglishName.SelectionStart = txtHindiName.Text.Length; // keep cursor at end
+                txtEnglishName.BackColor = Color.Red;
+                txtEnglishName.BorderStyle = BorderStyle.FixedSingle;
+            }
+            else
+            {
+                txtEnglishName.BackColor = Color.White;
+                txtEnglishName.BorderStyle = BorderStyle.Fixed3D;
+            }
             if (string.IsNullOrWhiteSpace(txtEnglishName.Text))
             {
                 txtEnglishName.BackColor = Color.Red;
@@ -695,6 +726,24 @@ namespace ArecaIPIS.Forms
 
         private void txtHindiName_TextChanged(object sender, EventArgs e)
         {
+          
+            string text = txtHindiName.Text;
+
+            // Regex: allow only letters (any language) and spaces
+            if (System.Text.RegularExpressions.Regex.IsMatch(text, @"[^ \p{L}]"))
+            {
+                txtHindiName.Text = System.Text.RegularExpressions.Regex.Replace(text, @"[^ \p{L}]", "");
+                txtHindiName.SelectionStart = txtHindiName.Text.Length; // keep cursor at end
+                txtHindiName.BackColor = Color.Red;
+                txtHindiName.BorderStyle = BorderStyle.FixedSingle;
+            }
+            else
+            {
+                txtHindiName.BackColor = Color.White;
+                txtHindiName.BorderStyle = BorderStyle.Fixed3D;
+            }
+
+
             if (string.IsNullOrWhiteSpace(txtHindiName.Text))
             {
                 txtHindiName.BackColor = Color.Red;
@@ -711,6 +760,23 @@ namespace ArecaIPIS.Forms
 
         private void txtRegionalName_TextChanged(object sender, EventArgs e)
         {
+            string text = txtRegionalName.Text;
+
+            // Regex: allow only letters (any language) and spaces
+            if (System.Text.RegularExpressions.Regex.IsMatch(text, @"[^ \p{L}]"))
+            {
+                txtRegionalName.Text = System.Text.RegularExpressions.Regex.Replace(text, @"[^ \p{L}]", "");
+                txtRegionalName.SelectionStart = txtHindiName.Text.Length; // keep cursor at end
+                txtRegionalName.BackColor = Color.Red;
+                txtRegionalName.BorderStyle = BorderStyle.FixedSingle;
+            }
+            else
+            {
+                txtRegionalName.BackColor = Color.White;
+                txtRegionalName.BorderStyle = BorderStyle.Fixed3D;
+            }
+
+
             if (string.IsNullOrWhiteSpace(txtRegionalName.Text))
             {
                 txtRegionalName.BackColor = Color.Red;

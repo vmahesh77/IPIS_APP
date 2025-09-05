@@ -1043,7 +1043,9 @@ namespace ArecaIPIS.Forms
             {
                 text.BorderStyle = BorderStyle.FixedSingle;
                 text.BackColor = Color.Red;
-                
+                if (text.Name == "txtHindi")
+                    countTextBoxValidations++;
+
             }
             else
             {
@@ -2026,6 +2028,18 @@ namespace ArecaIPIS.Forms
         private void rctbTrainNumber_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbTrainType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true; // cancels typing
+            MessageBox.Show("Please select an item from the dropdown.");
+        }
+
+        private void cmbCategory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true; // cancels typing
+            MessageBox.Show("Please select an item from the dropdown.");
         }
     }
 }

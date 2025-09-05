@@ -30,10 +30,10 @@ namespace ArecaIPIS.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblAddStation = new System.Windows.Forms.Label();
             this.dgvAddStation = new System.Windows.Forms.DataGridView();
             this.Column = new System.Windows.Forms.DataGridViewImageColumn();
@@ -52,6 +52,8 @@ namespace ArecaIPIS.Forms
             this.btnRKeyboard = new System.Windows.Forms.Button();
             this.txtRegionalName = new System.Windows.Forms.TextBox();
             this.txtEnglishName = new System.Windows.Forms.TextBox();
+            this.pnlSCreate = new System.Windows.Forms.Panel();
+            this.lblCreateStation = new System.Windows.Forms.Label();
             this.txtHindiName = new System.Windows.Forms.TextBox();
             this.txtStationCode = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
@@ -70,11 +72,10 @@ namespace ArecaIPIS.Forms
             this.lblHindi = new System.Windows.Forms.Label();
             this.lblEnglish = new System.Windows.Forms.Label();
             this.lblStationCode = new System.Windows.Forms.Label();
-            this.pnlSCreate = new System.Windows.Forms.Panel();
-            this.lblCreateStation = new System.Windows.Forms.Label();
             this.lblNoDataToDisplay = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.chkFilter = new System.Windows.Forms.CheckedListBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddStation)).BeginInit();
             this.pnlCreateStation.SuspendLayout();
             this.pnlSCreate.SuspendLayout();
@@ -98,14 +99,14 @@ namespace ArecaIPIS.Forms
             this.dgvAddStation.AllowUserToResizeColumns = false;
             this.dgvAddStation.AllowUserToResizeRows = false;
             this.dgvAddStation.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAddStation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAddStation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAddStation.ColumnHeadersHeight = 35;
             this.dgvAddStation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvAddStation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -114,30 +115,30 @@ namespace ArecaIPIS.Forms
             this.English,
             this.Hindi,
             this.RegionalLanguage});
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAddStation.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAddStation.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAddStation.GridColor = System.Drawing.SystemColors.InactiveCaption;
             this.dgvAddStation.Location = new System.Drawing.Point(30, 33);
             this.dgvAddStation.Name = "dgvAddStation";
             this.dgvAddStation.ReadOnly = true;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAddStation.RowHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAddStation.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAddStation.RowHeadersVisible = false;
             this.dgvAddStation.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black;
-            this.dgvAddStation.RowsDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dgvAddStation.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAddStation.RowTemplate.Height = 29;
             this.dgvAddStation.RowTemplate.ReadOnly = true;
             this.dgvAddStation.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -262,6 +263,7 @@ namespace ArecaIPIS.Forms
             // pnlCreateStation
             // 
             this.pnlCreateStation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCreateStation.Controls.Add(this.label1);
             this.pnlCreateStation.Controls.Add(this.btnHKeyboard);
             this.pnlCreateStation.Controls.Add(this.btnRKeyboard);
             this.pnlCreateStation.Controls.Add(this.txtRegionalName);
@@ -331,6 +333,27 @@ namespace ArecaIPIS.Forms
             this.txtEnglishName.TabIndex = 2;
             this.txtEnglishName.TextChanged += new System.EventHandler(this.txtEnglishName_TextChanged);
             this.txtEnglishName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEnglishName_KeyPress);
+            // 
+            // pnlSCreate
+            // 
+            this.pnlSCreate.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.pnlSCreate.Controls.Add(this.lblCreateStation);
+            this.pnlSCreate.Location = new System.Drawing.Point(0, 0);
+            this.pnlSCreate.Name = "pnlSCreate";
+            this.pnlSCreate.Size = new System.Drawing.Size(1251, 37);
+            this.pnlSCreate.TabIndex = 46;
+            this.pnlSCreate.Visible = false;
+            // 
+            // lblCreateStation
+            // 
+            this.lblCreateStation.AutoSize = true;
+            this.lblCreateStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreateStation.ForeColor = System.Drawing.Color.White;
+            this.lblCreateStation.Location = new System.Drawing.Point(3, 5);
+            this.lblCreateStation.Name = "lblCreateStation";
+            this.lblCreateStation.Size = new System.Drawing.Size(140, 24);
+            this.lblCreateStation.TabIndex = 0;
+            this.lblCreateStation.Text = "Create Station";
             // 
             // txtHindiName
             // 
@@ -550,27 +573,6 @@ namespace ArecaIPIS.Forms
             this.lblStationCode.TabIndex = 22;
             this.lblStationCode.Text = "Station Code";
             // 
-            // pnlSCreate
-            // 
-            this.pnlSCreate.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.pnlSCreate.Controls.Add(this.lblCreateStation);
-            this.pnlSCreate.Location = new System.Drawing.Point(0, 0);
-            this.pnlSCreate.Name = "pnlSCreate";
-            this.pnlSCreate.Size = new System.Drawing.Size(1251, 37);
-            this.pnlSCreate.TabIndex = 46;
-            this.pnlSCreate.Visible = false;
-            // 
-            // lblCreateStation
-            // 
-            this.lblCreateStation.AutoSize = true;
-            this.lblCreateStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreateStation.ForeColor = System.Drawing.Color.White;
-            this.lblCreateStation.Location = new System.Drawing.Point(3, 5);
-            this.lblCreateStation.Name = "lblCreateStation";
-            this.lblCreateStation.Size = new System.Drawing.Size(140, 24);
-            this.lblCreateStation.TabIndex = 0;
-            this.lblCreateStation.Text = "Create Station";
-            // 
             // lblNoDataToDisplay
             // 
             this.lblNoDataToDisplay.AutoSize = true;
@@ -597,6 +599,18 @@ namespace ArecaIPIS.Forms
             this.chkFilter.Size = new System.Drawing.Size(116, 64);
             this.chkFilter.TabIndex = 48;
             this.chkFilter.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(542, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 24);
+            this.label1.TabIndex = 76;
+            this.label1.Text = "*";
             // 
             // frmAddStation
             // 
@@ -671,5 +685,6 @@ namespace ArecaIPIS.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn RegionalLanguage;
         private System.Windows.Forms.Button btnHKeyboard;
         private System.Windows.Forms.Button btnRKeyboard;
+        private System.Windows.Forms.Label label1;
     }
 }

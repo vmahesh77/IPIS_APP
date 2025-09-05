@@ -191,7 +191,7 @@ namespace ArecaIPIS
 
 
              LoadingServer();
-          await Task.Delay(30000);
+          //await Task.Delay(30000);
             OpenFormInloginPanel(new frmLoginPage(this));
 
            
