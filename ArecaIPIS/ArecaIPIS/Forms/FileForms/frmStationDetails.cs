@@ -180,10 +180,52 @@ namespace ArecaIPIS.Forms
             panSelectedLanguages.Enabled = true;
             panSelectLanguages.Enabled = true;
         }
+
+        public bool ValidatePlatforms()
+        {
+
+            int numberOfPlatforms = int.Parse(rtxtNoOfPlatforms.Text.Trim());
+
+            for (int i = 1; i <= numberOfPlatforms; i++)
+            {
+                string richTextBoxName = "rtxtplatformNo" + i;
+
+                Control[] richTextBoxes = this.Controls.Find(richTextBoxName, true);
+
+                if (richTextBoxes.Length > 0 && richTextBoxes[0] is RichTextBox rtxt)
+                {
+                    string value = rtxt.Text.Trim();
+
+                    // Example: check if empty or "0"
+                    if (string.IsNullOrEmpty(value) || value == "0")
+                    {
+                        MessageBox.Show($"Error: Invalid value at platform index {i}",
+                                        "Validation Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+
+                        // You can also focus the textbox
+                        rtxt.Focus();
+                        rtxt.BackColor = Color.Red;
+                        return true;
+                       
+                    }
+                }
+            }
+
+            return false;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
+               bool validated= ValidatePlatforms();
+                if(validated)
+                {
+                    
+                    
+                    return;
+                }
 
                 DialogResult dialogResult = MessageBox.Show(" Do you want to Save Station Details", "Save Confirmation", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -207,7 +249,26 @@ namespace ArecaIPIS.Forms
                         NoOfPlatforms && PortNo && NoOfRowsTODisplay && IpAddress && PlatformPanel)
                     {
                         string GetPlatforms = GetEnabledRichTextBoxValues();
-                        List<string> platformsList = GetPlatforms.Split(',').ToList();
+                        List<string> platformsList = GetPlatforms.Split(',').Select(x => x.Trim()).Select(x =>
+                          {
+                            // keep "0" as it is
+                               if (x == "0")
+                                 return x;
+
+                                 // if it's two characters and starts with 0, strip the prefix
+                              if (x.Length == 2 && x.StartsWith("0"))
+                               return x.Substring(1);
+
+                              // otherwise leave unchanged
+                               return x;
+                              })
+                        .ToList();
+
+                        if (platformsList.Exists(x => x == "0"))
+                        {
+                            MessageBox.Show("Please Enter Valid Platform Data");
+                            return;
+                        }
 
 
                         if (string.IsNullOrEmpty(GetPlatforms))

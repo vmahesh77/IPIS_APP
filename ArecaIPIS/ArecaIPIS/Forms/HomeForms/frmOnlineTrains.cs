@@ -1880,11 +1880,23 @@ namespace ArecaIPIS.Forms.HomeForms
         }
         private void dgvOnlineTrains_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
             // Check if the pressed key is a digit or backspace
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Enter)
             {
                 // If the key is not a digit or backspace, cancel the input
                 e.Handled = true;
+            }
+
+            TextBox textBox = sender as TextBox;
+
+            if (textBox.Text.Length >= 5 && !char.IsControl(e.KeyChar))
+            {
+                MessageBox.Show("Maximum 5 characters allowed.",
+                                "Validation",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                e.Handled = true; // stops further typing
             }
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -5866,7 +5878,14 @@ namespace ArecaIPIS.Forms.HomeForms
 
             try
             {
-
+                if (dgvOnlineTrains.CurrentCell.ColumnIndex == 2 && e.Control is TextBox textBox)
+                {
+                    textBox.MaxLength = 5;  // Limit input to 5 characters
+                }
+                else if (e.Control is TextBox tb)
+                {
+                    tb.MaxLength = 0; // Reset for other columns (no limit)
+                }
 
                 if (dgvOnlineTrains.CurrentCell.ColumnIndex == 2) // Replace with your column index
                 {
@@ -6595,6 +6614,25 @@ namespace ArecaIPIS.Forms.HomeForms
             catch (Exception ex)
             {
                 Server.LogError(ex.Message);
+            }
+        }
+
+        private void dgvOnlineTrains_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            // Check if it's the second column (index 1)
+            if (e.ColumnIndex == 2)
+            {
+                string newValue = e.FormattedValue?.ToString() ?? "";
+
+                if (newValue.Length > 5)
+                {
+                    MessageBox.Show("Only 5 characters are allowed .",
+                                    "Validation Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+
+                    e.Cancel = true; // Prevents leaving the cell until corrected
+                }
             }
         }
     }

@@ -37,6 +37,12 @@ namespace ArecaIPIS.Forms
                 string username = txtUsername.Text.Trim();
                 string password = txtPassword.Text.Trim();
 
+
+                if(username==""|| username==null||password ==""||password==null)
+                {
+                    MessageBox.Show("Please enter Username or Password");
+                    return;
+                }
                 // Retrieve the users from the database
                 DataTable usersdt = UserDb.GetUsers();
 
